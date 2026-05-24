@@ -34,7 +34,7 @@ For the second task, I trained the machine learning model on actual images of pl
 
 The purpose was to see if the FNN would learn something equivalent to an NDVI threshold to classify pixels as either plant or background. Given NDVI's higher values corresponding to healthy plant life and lower values for barren ground, a naive approach to this task would be to simply set a threshold in NDVI and classify any pixels above that threshold as plant life and any pixels below it as background. (I note here that I haven't actually seen this approach used in the literature, and I'm sure there are more effective methods to carry out this task; however, as the following experiments show, it isn't an unreasonable baseline!) If the FNN were to reproduce an NDVI threshold, it would clearly show that it had learned a feature representation, not necessarily of the whole range of NDVI, but of whether a given pixel was above or below that NDVI threshold; and if it learned a threshold separate from a fixed value of NDVI, it would be interesting to see where those thresholds differed and why.
 
-It turns out that, while calculating NDVI is a rational function of the Red and NIR bands, calculating all possible Red and NIR values for a fixed threshold of NDVI is a linear function!$^{a}$ Specifically, for a fixed NDVI threshold $t$, you can calculate
+It turns out that, while calculating NDVI is a rational function of the Red and NIR bands, calculating all possible Red and NIR values for a fixed threshold of NDVI is a linear function! $^{a}$ Specifically, for a fixed NDVI threshold $t$, you can calculate
 
 $NIR = \frac{1+t}{1-t}Red \; \; \;$ or $\; \; \; Red = \frac{1-t}{1+t}NIR$.
 
@@ -66,7 +66,7 @@ More interesting, almost all the highlighted pixels are in the shaded regions of
 
 ![20200720_121239_corn_0100](Images/20200720_121239_corn_0100.png)
 
-This image is also taken from the Train dataset, and in this case actually all divergent predictions are background pixels (misclassified as plant life by the NDVI threshold). I include it along with the above image because it isn't clear to me whether the misclassified pixels are darker because of shadow, or if they represent darker soil dug up by the apparent disturbance of the ground along the bottom of the image (or both). It's one of the few images in either dataset where differences in threshold predictions aren't obviously limited to shaded regions.$^{b}$
+This image is also taken from the Train dataset, and in this case actually all divergent predictions are background pixels (misclassified as plant life by the NDVI threshold). I include it along with the above image because it isn't clear to me whether the misclassified pixels are darker because of shadow, or if they represent darker soil dug up by the apparent disturbance of the ground along the bottom of the image (or both). It's one of the few images in either dataset where differences in threshold predictions aren't obviously limited to shaded regions. $^{b}$
 
 $^{b}$ (I should clarify here that there are other differing predictions between the two thresholds, however we are only highlighting pixels in the bottom-left corner of the NDVI heatmap, since this is where the two thresholds most clearly diverge.)
 
