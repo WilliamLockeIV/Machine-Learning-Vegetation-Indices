@@ -34,9 +34,13 @@ For the second task, I trained the machine learning model on actual images of pl
 
 The purpose was to see if the FNN would learn something equivalent to an NDVI threshold to classify pixels as either plant or background. Given NDVI's higher values corresponding to healthy plant life and lower values for barren ground, a naive approach to this task would be to simply set a threshold in NDVI and classify any pixels above that threshold as plant life and any pixels below it as background. (I note here that I haven't actually seen this approach used in the literature, and I'm sure there are more effective methods to carry out this task; however, as the following experiments show, it isn't an unreasonable baseline!) If the FNN were to reproduce an NDVI threshold, it would clearly show that it had learned a feature representation, not necessarily of the whole range of NDVI, but of whether a given pixel was above or below that NDVI threshold; and if it learned a threshold separate from a fixed value of NDVI, it would be interesting to see where those thresholds differed and why.
 
-It turns out that, while calculating NDVI is a rational function of the Red and NIR bands, calculating all possible Red and NIR values for a fixed threshold of NDVI is a linear function! $^{a}$ Specifically, for a fixed NDVI threshold $t$, you can calculate
+It turns out that, while calculating NDVI is a rational function of the Red and NIR bands, calculating all possible Red and NIR values for a fixed threshold of NDVI is a linear function! $^{a}$ Specifically, for a fixed NDVI threshold t, you can calculate
 
-$NIR = \frac{1+t}{1-t}Red$     or     $Red = \frac{1-t}{1+t}NIR$.
+$NIR = \frac{1+t}{1-t}Red$
+
+or
+
+$Red = \frac{1-t}{1+t}NIR$.
 
 $^{a}$ (This is obvious from the structure of the rational equation, I just hadn't thought of it before graphing out the function.)
 
