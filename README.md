@@ -36,7 +36,7 @@ The purpose was to see if the FNN would learn something equivalent to an NDVI th
 
 It turns out that, while calculating NDVI is a rational function of the Red and NIR bands, calculating all possible Red and NIR values for a fixed threshold of NDVI is a linear function! $^{a}$ Specifically, for a fixed NDVI threshold $t$, you can calculate
 
-$NIR = \frac{1+t}{1-t}Red \; \; \;$ or $\; \; \; Red = \frac{1-t}{1+t}NIR$.
+$NIR = \frac{1+t}{1-t}Red$     or     $Red = \frac{1-t}{1+t}NIR$.
 
 $^{a}$ (This is obvious from the structure of the rational equation, I just hadn't thought of it before graphing out the function.)
 
