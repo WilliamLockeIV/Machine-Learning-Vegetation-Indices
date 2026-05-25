@@ -60,7 +60,7 @@ Below we compare the two.
 
 As can be seen, across most of the input space the machine learned threshold stays fairly close to the NDVI threshold. However, it is not a linear function of either Red or NIR, and it diverges most significantly from the linear threshold in the bottom-left corner, where both Red and NIR values are close to zero. Pixels in this range the FNN classifies as background, while the NDVI threshold would classify them as vegetation. Interestingly, on the test set, the FNN threshold also produces an F1 score of 0.93, so on this particular dataset it doesn't improve that evaluation metric! (We look more closely at this and other metrics in the Jupyter notebook.) To understand why it makes this deviation then, we need to look at some actual images.
 
-The first image we'll look at is taken from the Train dataset. All pixels in that bottom-left corner of the NDVI heatmap, where the NDVI threshold would classify them as plants while the FNN threshold would classify them as background, are colored in either orange or magenta -- orange if the FNN threshold is correct and they are actually background, magenta if the NDVI threshold is correct and they are actually plant life.
+The first image we'll look at is taken from the Train dataset. All pixels in that bottom-left corner of Figure 5, where the NDVI threshold would classify them as plants while the FNN threshold would classify them as background, are colored in either orange or magenta -- orange if the FNN threshold is correct and they are actually background, magenta if the NDVI threshold is correct and they are actually plant life.
 
 ![20200727_101255_corn_0370](Images/20200727_101255_corn_0370.png)
 **Figure 6: Corn in shadow**
