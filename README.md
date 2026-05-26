@@ -41,6 +41,7 @@ $Red = \frac{1-t}{1+t}NIR$.
 $^{a}$ (This is obvious from the structure of the rational equation, I just hadn't thought of it before graphing out the function.)
 
 ![Example NDVI Thresholds](Images/NDVI_thresholds.png)
+
 **Figure 2: Example NDVI Thresholds**
 
 A linear function is easy for a neural network to learn, so there was no question of the FNN having the capacity to do so -- it would come down to whether this was the most effective way of segmenting the data. To train the model, I selected 80,000 pixels from 80 images (40,000 vegetation, 40,000 background), and I set aside 11,000 pixels from a separate set of 11 images (5,500 vegetation, 5,500 background) for evaluation. To find the most effective NDVI threshold for classification, I did a grid search from $-1$ to $+1$ for the value that would maximize F1 score on the 80,000 training pixels, and then also evaluated that threshold on the 11,000 test pixels. The resulting threshold was set at NDVI $\approx 0.03$ and produced a Test F1 score of 0.93.
