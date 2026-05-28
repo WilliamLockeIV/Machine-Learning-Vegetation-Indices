@@ -1,0 +1,7 @@
+gdown
+numpy
+torch
+plotly
+matplotlib
+scikit-learn
+opencv-python
