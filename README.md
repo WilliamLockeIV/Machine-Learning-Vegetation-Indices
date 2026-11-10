@@ -126,4 +126,8 @@ Vayssade, J.-A., Paoli, J.-N., Gée, C., & Jones, G. DeepIndices: Remote Sensing
 
 Zhang, L., Sun, X., Wu, T., & Zhang, H. An Analysis of Shadow Effects on Spectral Vegetation Indexes Using a Ground-Based Imaging Spectrometer. IEEE Geoscience and Remote Sensing Letters, 2015.
 
+[Code] Balestriero, R. spline-DN-visualization. https://github.com/RandallBalestriero/spline-DN-visualization
+
 [Dataset] Vayssade, J.-A., Jones, G., Paoli, J.-N., & Gée, C. Dataset used in DeepIndices. Recherche Data Gouv, V2, 2021. https://doi.org/10.15454/DSQC8N
+
+**AI Disclosure**: Versions of Google Gemini 2 and 3 were used in the [Jupyter notebook](https://github.com/WilliamLockeIV/Machine-Learning-Vegetation-Indices/blob/main/Pilot_Study_NDVI.ipynb) to generate code for some visualizations and low-level operations. All analysis and writing are the author's.
